@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="form-wrap">
+
+    <h1>Создание группы</h1>
+  </div>
+  <form method="post" action="form">
+    <div>
+      <label for="name">Группа</label>
+      <input type="text" name="groupname" required>
+    </div>
+    <div>
+      <label for="name">Специальность</label>
+      <input type="text" name="specialnost" required>
+    </div>
+    <div>
+      <label for="faculty">Факультет</label>
+      <select name="faculty">
+        <option>Выберите факультет</option>
+        <option value="ФИТИКС">ФИТИКС</option>
+        <option value="ФЭОИМ">ФЭОИМ</option>
+      </select>
+      <div class="select-arrow"></div>
+    </div>
+    <div>
+      <label for="course">Курс</label>
+      <select name="course">
+        <option>Выберите курс</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <div class="select-arrow"></div>
+    </div>
+    <button type="submit">Создать</button>
+  </form>
+
+{% endblock %}

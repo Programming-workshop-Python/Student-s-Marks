@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выставить оценку</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="all">
+</head>
+<body>
+
+<header>
+	<div class="center">
+		<div>
+			<a href="#" class="logo">
+			Система по работе со студентами "Зачет.ru"
+			</a>
+		</div>
+	</div>
+</header>
+
+
+Группа <select id="group_id" class="StyleSelectBox">
+	<option value="0">- Выберите группу -</option>
+	<option value="1" id="fitm191">ФИТм-191</option>
+	<option value="2" id="fitm192">ФИТм-192</option>
+</select>
+<br>Студент
+<select id="student_id" disabled>
+<option value="0">- Выберите студента -</option>
+</select>
+<br>Дисциплина:
+<select id="subject_id" disabled>
+<option value="0">- Выберите дисциплину -</option>
+</select>
+<br>Оценка:
+<select id="estimate_id" disabled>
+	<option value="0">- Выберите оценку -</option>
+</select>
+
+<script>
+var all_students=[];
+var all_subjects=[[],[],[]];
+var all_estimations=[[],[],[]];
+
+all_students[0]=["Филичкина"];
+all_students[1]=["Канунникова","Крылова","Немчинова"];
+
+all_subjects[0]=["БД","НИД","Программирование"];
+all_subjects[1]=["БОСИ","НИД","Программирование"];
+all_subjects[1][1]=["БОСИ","НИД","Программирование"];
+all_subjects[1][2]=["БОСИ","НИД","Программирование"];
+
+all_estimations[0][0]=["Зачет","Незачет"];
+
+
+group_id.onchange=function(){
+student_id.disabled=false;
+student_id.innerHTML="<option value='0'>- Выберите студента -</option>";
+mystudent=this.value-1;
+if(mystudent!=-1){
+    for(var i=0;i<all_students[mystudent].length;i++){
+        student_id.innerHTML+='<option value="'+(i+1)+'">'+all_students[mystudent][i]+'</option>';
+    }
+}else{
+    student_id.disabled=true;
+    subject_id.disabled=true;
+}
+}
+
+group_id.onchange=function(){
+subject_id.disabled=false;
+subject_id.innerHTML="<option value='0'>- Выберите дисциплину -</option>";
+var mysubj=this.value-1;
+if(mysubj!=-1){
+    for(var i=0;i<all_subjects[mysubj].length;i++){
+        subject_id.innerHTML+='<option value="'+(i+1)+'">'+all_subjects[mysubj][i]+'</option>';
+    }
+}else{
+    subject_id.disabled=true;
+}
+}
+
+subject_id.onchange=function(){
+estimate_id.disabled=false;
+estimate_id.innerHTML="<option value='0'>- Выберите оценку -</option>";
+var myest=this.value-1;
+if(myest!=-1){
+    for(var i=0;i<estimate_id[mysubj][myest].length;i++){
+        estimate_id.innerHTML+='<option value="'+(i+1)+'">'+all_estimations[mysubj][myest][i]+'</option>';
+    }
+}else{
+    estimate_id.disabled=true;
+}
+}
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title> Зачет.ru </title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='hf.css') }}">
+
+ </head>
+ <body>
+
+ <header>
+	<div class="center">
+		<div>
+			<a href="#" class="logo">
+			Система по работе со студентами "Зачет.ru"
+			</a>
+		</div>
+	</div>
+</header>
+
+
+ {% block body %}
+ {% endblock %}
+ </body>
+</html>

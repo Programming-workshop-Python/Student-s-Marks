@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='hf.css') }}">
+<div class="form-wrap">
+  <!-- <div class="profile"><img src="https://html5book.ru/wp-content/uploads/2016/10/profile-image.png"> -->
+    <h1>Редактирование оценки</h1>
+  </div>
+  <form method="post" action="/SucsMark">
+    <div>
+      {% with name= fio %}
+        <label> Студент</label>
+        <textarea name="fio" cols="30" readonly>{{fio}}</textarea>
+        {% endwith %}
+        </div>
+      <div>
+      {% with name= group %}
+      <label> Группа</label>
+          <input name="group" type="text" value={{group}}>
+      {% endwith %}
+          <div>
+
+     <table border="table">
+   <tr>
+        {% for item in data %}
+            <th> {{ item[0]}}</th>
+         <th> {{ item[1]}}</th>
+   </tr>
+
+     </table>
+<div>
+       <button onclick="myFunction()">Добавить</button>
+</div>
+
+<script>
+function myFunction() {
+  alert("Запись добавлена!");
+}
+</script>
+    <p><a href="/" class="design">Назад</a>
+
+  </form>
+
+
+{% endblock %}
+
+<!--</body>
+</html> -->

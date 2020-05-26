@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form method='POST' action='/Select'>
+<p>Дисциплины</p>
+
+    <div>
+
+      {% for item in data %}
+    <textarea name="fio" cols="30" readonly>{{item}}</textarea>
+     {% endfor %}
+</div>
+
+<script>
+function myFunction() {
+  alert("Запись добавлена!");
+}
+</script>
+    <p><a href="/" class="design">Назад</a>
+
+</form>
+
+{% endblock %}
