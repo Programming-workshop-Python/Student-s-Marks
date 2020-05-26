@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form method='POST' action='/Group'>
+<table>
+<p>Форма добавления группы</p>
+<label>Группа</label>
+<input name="group" type='TEXT' width='60'/>
+</table>
+<button onclick="myFunction()">Добавить</button>
+<script>
+function myFunction() {
+  alert("Запись добавлена!");
+}
+</script>
+    <p><a href="/" class="design">Назад</a>
+
+</form>
+
+{% endblock %}
